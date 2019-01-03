@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  videoserver:
+    image: blackojack/ant-media-server
+    privileged: true
+    network_mode: host
+    restart: always
+    volumes:
+      - ./store/liveapp.db:/usr/local/antmedia/liveapp.db
+      - ./store/webrtcapp.db:/usr/local/antmedia/webrtcapp.db
+      - ./store/server.db:/usr/local/antmedia/server.db
